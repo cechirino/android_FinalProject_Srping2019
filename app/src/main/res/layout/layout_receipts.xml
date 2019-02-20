@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="65dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/BackButtom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/saveReceiptLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:text="Save a Receipts"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/infoExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/saveReceiptLabel">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Account:"
+                    android:textSize="15dp" />
+                <Spinner
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sniperAccount"
+                    android:layout_marginStart="55dp"
+                    android:entries="@array/spinnerCategory">
+                </Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Name"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="75dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="Enter a name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Date"
+                    android:textSize="15dp" />
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="85dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="Enter a Amount"
+                    android:inputType="date"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Location"
+                    android:textSize="15dp" />
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="Enter a Date"
+                    android:inputType="textMultiLine"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Image:"
+                    android:textSize="15dp" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:text="Camera"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/saveButtonReceipt"
+            app:layout_constraintTop_toBottomOf="@id/infoExpense"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp"
+            android:text="Save"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/receipttListLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Reciepts List"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/saveButtonReceipt"/>
+
+        <!--Lists Of Receipts-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/budgettList"
+            app:layout_constraintTop_toBottomOf="@+id/receipttListLable"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Receipts Added"
+                        android:textSize="15dp"
+                        android:layout_marginTop="60dp"/>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

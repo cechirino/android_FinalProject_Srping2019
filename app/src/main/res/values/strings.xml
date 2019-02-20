@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Money Tracker</string>
+    <string name="menueButton">Menu</string>
+    <string name="totalMoney">$ 0</string>
+
+    <!--Incoming Amount Stringd-->
+    <string name="incomingAmount">+ $0</string>
+    <string name="incomingDate">Nothing Found</string>
+
+    <!--Budget Label-->
+    <string name="budgetLabel">BUDGET</string>
+
+    <!--Monthly Expenses Lable-->
+    <string name="monthlyExpensesLabel">Monthly Expenses</string>
+
+    <!--Total Expenses -->
+    <string name="totalExpenses">- $ 0 </string>
+
+    <string name="BackButtom">Back</string>
+
+    <!--Spinner Account Type-->
+    <string-array name="spinnerItemsAccountType">
+        <item>Checking</item>
+        <item>Saving</item>
+    </string-array>
+
+    <string name="amount">Amount:</string>
+
+    <string name="save">Save</string>
+
+    <string name="remove">Remove</string>
+
+
+    <!--Spinner Expense Repeat-->
+    <string-array name="spinnerRepeat">
+        <item>Monthly</item>
+        <item>weekly</item>
+        <item>Daily</item>
+    </string-array>
+
+    <!--Spinner Expense Repeat-->
+    <string-array name="spinnerCategory">
+        <item>Shopping</item>
+        <item>Mail</item>
+        <item>Payments</item>
+    </string-array>
+
+    <!--Spinner Accounts Names-->
+    <string-array name="spinnerAccountsNames">
+        <item>MyChecking</item>
+        <item>MySaving</item>
+        <item>Discover</item>
+    </string-array>
+
+</resources>

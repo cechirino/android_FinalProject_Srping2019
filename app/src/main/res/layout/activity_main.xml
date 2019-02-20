@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <!--Menu Button-->
+    <Button
+        android:id="@+id/menuButton"
+        android:layout_width="65dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/menueButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Total Amount of Money-->
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/totalMoney"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:autoSizeMaxTextSize="14dp" />
+
+    <!--Incoming Money-->
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/incomingInfo"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/totalAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/incomingAmount"
+            android:textSize="15dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/incomingDate"
+            android:textSize="15dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <!--Budget Label-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/budgetLabel"
+        android:text="@string/budgetLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/incomingInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
+        android:textSize="15dp"/>
+
+    <!--Lists Of Budgets-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/budgetList"
+        app:layout_constraintTop_toBottomOf="@+id/budgetLabel"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="30dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Budgets Created Yet"
+                    android:textSize="15dp"
+                    android:layout_marginTop="60dp"/>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <!--Monthly Expenses Label-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/montlyExpensesLabel"
+        android:text="@string/monthlyExpensesLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/budgetList"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
+        android:textSize="15dp"/>
+
+    <!--Lists Of Budgets-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/expensestList"
+        app:layout_constraintTop_toBottomOf="@+id/montlyExpensesLabel"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="30dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Expenses To Show"
+                    android:textSize="15dp"
+                    android:layout_marginTop="60dp"/>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/totalExpenses"
+        android:textSize="30dp"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@+id/expensestList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"/>
+
+</android.support.constraint.ConstraintLayout>
+
+</ScrollView>
