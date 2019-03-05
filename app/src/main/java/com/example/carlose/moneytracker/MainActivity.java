@@ -33,9 +33,23 @@ public class MainActivity extends AppCompatActivity {
         expensesCardView.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                expensesCardView.getContext().startActivity(new Intent(expensesCardView.getContext(), EditExpensesActivity.class));
+                CallExpensesEditLayout();
             }
         });
+
+        budgetCardview = (CardView) findViewById(R.id.budgetCardView);
+        budgetCardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CallBudgetsEditLayout();
+            }
+        });
+    }
+
+    private void CallBudgetsEditLayout()
+    {
+        Intent intent = new Intent(getApplicationContext(), EditBudgetActivity.class);
+        startActivity(intent);
     }
 
     private void CallExpensesEditLayout()
