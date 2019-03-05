@@ -189,6 +189,7 @@
                 android:layout_width="200dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="30dp"
+                android:id="@+id/expensesCardViewE"
                 >
                 <RelativeLayout
                     android:layout_width="match_parent"
