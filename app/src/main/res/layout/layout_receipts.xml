@@ -8,21 +8,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/menuButton"
-            android:layout_width="65dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/BackButtom"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/saveReceiptLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="60dp"
             android:text="Save a Receipts"
             android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +66,8 @@
 
                 <EditText
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
                     android:layout_marginStart="75dp"
                     android:layout_marginTop="15dp"
                     android:hint="Enter a name" />
@@ -95,7 +87,8 @@
                     android:textSize="15dp" />
                 <EditText
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
                     android:layout_marginStart="85dp"
                     android:layout_marginTop="15dp"
                     android:hint="Enter a Amount"
@@ -117,7 +110,8 @@
                     android:textSize="15dp" />
                 <EditText
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
                     android:layout_marginStart="60dp"
                     android:layout_marginTop="15dp"
                     android:hint="Enter a Date"
