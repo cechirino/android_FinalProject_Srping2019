@@ -78,7 +78,7 @@
         android:textSize="15dp"/>
 
     <!--Lists Of Budgets-->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:id="@+id/budgetList"
@@ -86,8 +86,6 @@
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
         android:background="#f2f2f2">
 
         <android.support.v7.widget.RecyclerView
@@ -100,7 +98,9 @@
 
         </android.support.v7.widget.RecyclerView>
 
-    </LinearLayout>
+
+
+    </RelativeLayout>
 
     <!--Monthly Expenses Label-->
 
