@@ -9,7 +9,15 @@ public class Budget implements Serializable {
     private static Double amount;
     private static int account;
 
+    //Temporary constructor for tests
     public Budget(String budgetname, double goal, double amount) {
+        this.budgetName = budgetname;
+        this.goal = goal;
+        this.amount = amount;
+        this.account = account;
+    }
+
+    public Budget(int budgetID, String budgetname, double goal, double amount) {
         this.budgetName = budgetname;
         this.goal = goal;
         this.amount = amount;

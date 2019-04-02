@@ -6,7 +6,7 @@ public class Account {
     private String type;
     private double amount;
 
-    public Account(String accountName, String type, double amount) {
+    public Account(int amountID, String accountName, String type, double amount) {
         this.accountName = accountName;
         this.type = type;
         this.amount = amount;

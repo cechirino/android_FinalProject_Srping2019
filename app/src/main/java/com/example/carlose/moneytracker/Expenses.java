@@ -7,7 +7,7 @@ public class Expenses {
     String dueDate;
     int account;
 
-    public Expenses(String expenseName, double amount, String dueDate, int account) {
+    public Expenses(int expensesID, String expenseName, double amount, String dueDate) {
         this.expenseName = expenseName;
         this.amount = amount;
         this.dueDate = dueDate;
