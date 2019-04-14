@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class Budget implements Serializable {
     private int budgetID;
-    private static String budgetName;
-    private static Double goal;
-    private static Double amount;
-    private static int account;
+    private  String budgetName;
+    private  Double goal;
+    private  Double amount;
+    private  int account;
 
     //Temporary constructor for tests
     public Budget(String budgetname, double goal, double amount) {

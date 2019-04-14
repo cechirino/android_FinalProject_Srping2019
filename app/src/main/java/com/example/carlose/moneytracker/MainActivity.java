@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         expensesCardView = (CardView) findViewById(R.id.expensesCardView);
 
-        expensesCardView.setOnClickListener( new View.OnClickListener() {
+        expensesCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CallExpensesEditLayout();
@@ -46,23 +46,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         addInfo();
-        if (budgetsList.size() > 0){
-           // CardView cardView = findViewById(R.id.budgetCardViewEmpty);
-           // cardView.setVisibility(View.GONE);
+        if (budgetsList.size() > 0) {
+            // CardView cardView = findViewById(R.id.budgetCardViewEmpty);
+            // cardView.setVisibility(View.GONE);
             addInfo();
             initRecyclerViewBudgets();
-        }
-        else{
+        } else {
             RecyclerView viewRecyclerView = findViewById(R.id.budgetRecyclerView);
             viewRecyclerView.setVisibility(View.GONE);
         }
 
     }
 
-    private void addInfo(){
+    private void addInfo() {
 
-        for ( int i = 0; i < 10; i++) {
-            Budget budget = new Budget("Hola" + i,2 + 1,3 + i);
+        for (int i = 0; i < 10; i++) {
+            Budget budget = new Budget("Hola" + i, 2 + 1, 3 + i);
 
             budgetsList.add(budget);
         }
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Add the data to the Budgets List
-    private  void initRecyclerViewBudgets(){
+    private void initRecyclerViewBudgets() {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = findViewById(R.id.budgetRecyclerView);
@@ -79,13 +78,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    private void CallExpensesEditLayout()
-    {
+    private void CallExpensesEditLayout() {
         Intent intent = new Intent(getApplicationContext(), EditExpensesActivity.class);
         startActivity(intent);
     }
 
-    private void CallActivity(){
+    private void CallActivity() {
         Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
