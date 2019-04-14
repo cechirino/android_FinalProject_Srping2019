@@ -100,12 +100,12 @@ public class MasterClass {
     //Delete Expenses
     public  void delete(Expenses e){}
 
-    //return a list wiht all the budget strored in the database
+    //return a list with all the budget stored in the database
     public List<Budget> getBudgets(){return null;}
 
-    //return a list wiht all the expenses strored in the database
+    //return a list with all the expenses stored in the database
     public List<Expenses> getExpenses(){return null;}
 
-    //return a list wiht all the accounts strored in the database
+    //return a list with all the accounts stored in the database
     public List<Account> getAccount(){return null;}
 }
