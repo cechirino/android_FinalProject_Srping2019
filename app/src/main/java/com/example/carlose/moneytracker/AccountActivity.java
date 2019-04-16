@@ -27,13 +27,13 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_account);
 
-       // masterClass = MasterClass.get(AccountActivity.this);
+       masterClass = MasterClass.get(AccountActivity.this);
         accountListCardView = (CardView) findViewById(R.id.accountCardViewEmpty);
         accountNameTxtBox = findViewById(R.id.accountNameTxtBox);
         amountAccountTxtBox = findViewById(R.id.amountAccountTxtBox);
         spinnerAccount = findViewById(R.id.spinnerAccount);
 
-       /* if (masterClass.getAccount().size() > 0) {
+       if (masterClass.getAccount().size() > 0) {
 
             accountListCardView.setVisibility(View.GONE);
             initRecyclerViewAccounts();
@@ -46,13 +46,13 @@ public class AccountActivity extends AppCompatActivity {
                     Toast.makeText(AccountActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
                 }
             });
-        }*/
+        }
 
         addButton = findViewById(R.id.addButtonAccount);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(accountNameTxtBox.getText() != null && amountAccountTxtBox.getText() != null){
+                if(!accountNameTxtBox.getText().toString().equals("") && !amountAccountTxtBox.getText().toString().equals("")){
 
                     Account account = new Account(accountNameTxtBox.getText().toString(),spinnerAccount.getSelectedItem().toString()
                             , Double.parseDouble(amountAccountTxtBox.getText().toString()));

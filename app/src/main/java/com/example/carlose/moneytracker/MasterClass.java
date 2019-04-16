@@ -74,14 +74,14 @@ public class MasterClass {
     public void addData(Account a){
         ContentValues values = getContentValues(a);
 
-        mDataBase.insert(budgetTable.Name, null, values);
+        mDataBase.insert(accountTable.Name, null, values);
     }
 
     //Add data to the budget table
     public void addData(Expenses e){
         ContentValues values = getContentValues(e);
 
-        mDataBase.insert(budgetTable.Name, null, values);
+        mDataBase.insert(expensesTable.Name, null, values);
     }
 
     //Add the code in the final stage of the app
@@ -163,7 +163,7 @@ public class MasterClass {
     public List<Expenses> getExpenses(){
         List<Expenses> expenses = new ArrayList<>();
 
-        monayTrackerCursorWrapper cursorWrapper = budgetQuery(null,null);
+        monayTrackerCursorWrapper cursorWrapper = expensesQuery(null,null);
 
         try{
             cursorWrapper.moveToFirst();
@@ -185,7 +185,7 @@ public class MasterClass {
     public List<Account> getAccount(){
         List<Account> accounts = new ArrayList<>();
 
-        monayTrackerCursorWrapper cursorWrapper = budgetQuery(null,null);
+        monayTrackerCursorWrapper cursorWrapper = accountsQuery(null,null);
 
         try{
             cursorWrapper.moveToFirst();

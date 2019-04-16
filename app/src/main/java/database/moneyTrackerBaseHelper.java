@@ -21,13 +21,13 @@ public class moneyTrackerBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(" CREATE TABLE " + budgetTable.Name + "(" + budgetTable.Cols.budgetID + " integer primary key autoincrement, " + budgetTable.Cols.budgetName + ", "
-                + budgetTable.Cols.amountBudget + ", " + budgetTable.Cols.goal);
+                + budgetTable.Cols.amountBudget + ", " + budgetTable.Cols.goal + ")");
 
         db.execSQL(" CREATE TABLE " + accountTable.Name + "(" + accountTable.Cols.accountID + " integer primary key autoincrement, " + accountTable.Cols.accountName + ", "
-                + accountTable.Cols.amountAccount + ", " + accountTable.Cols.type);
+                + accountTable.Cols.amountAccount + ", " + accountTable.Cols.type + ")");
 
         db.execSQL(" CREATE TABLE " + expensesTable.Name + "(" + expensesTable.Cols.expensesID + " integer primary key autoincrement, " + expensesTable.Cols.expensesName + ", "
-                + expensesTable.Cols.amountExpense + ", " + expensesTable.Cols.dueDate);
+                + expensesTable.Cols.amountExpense + ", " + expensesTable.Cols.dueDate + ")");
     }
 
     @Override

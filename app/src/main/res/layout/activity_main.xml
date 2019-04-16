@@ -85,7 +85,8 @@
         app:layout_constraintTop_toBottomOf="@+id/budgetLabel"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal">
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
@@ -145,7 +146,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
         android:gravity="center_horizontal">
 
         <android.support.v7.widget.RecyclerView
@@ -162,8 +162,7 @@
             android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_marginTop="30dp"
-            android:id="@+id/expensesCardViewEmpty"
-            >
+            android:id="@+id/expensesCardViewEmpty">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
