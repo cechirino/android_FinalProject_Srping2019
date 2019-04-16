@@ -15,10 +15,10 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private ArrayList<Budget> budgetsList;
+    private List<Budget> budgetsList;
     private Context context;
 
-    public RecyclerViewAdapter(Context context, ArrayList<Budget> budgetsList){
+    public RecyclerViewAdapter(Context context, List<Budget> budgetsList){
         this.budgetsList = budgetsList;
         this.context = context;
     }

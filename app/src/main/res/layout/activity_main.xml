@@ -85,8 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/budgetLabel"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:background="#f2f2f2">
+        android:layout_marginTop="20dp">
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
@@ -97,6 +96,27 @@
 
 
         </android.support.v7.widget.RecyclerView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/budgetCardViewEmpty"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Budgets To Show"
+                    android:textSize="15dp"
+                    android:layout_marginTop="60dp"/>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
 
 
 
@@ -115,8 +135,8 @@
         android:layout_marginTop="40dp"
         android:textSize="15dp"/>
 
-    <!--Lists Of Budgets-->
-    <LinearLayout
+    <!--Lists Of Expenses-->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:id="@+id/expensestList"
@@ -128,11 +148,21 @@
         android:orientation="horizontal"
         android:gravity="center_horizontal">
 
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/expensesRecyclerView"
+            android:orientation="horizontal">
+
+
+        </android.support.v7.widget.RecyclerView>
+
         <android.support.v7.widget.CardView
             android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_marginTop="30dp"
-            android:id="@+id/expensesCardView"
+            android:id="@+id/expensesCardViewEmpty"
             >
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -149,7 +179,7 @@
 
         </android.support.v7.widget.CardView>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"

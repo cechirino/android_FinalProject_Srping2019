@@ -1,9 +1,9 @@
 package com.example.carlose.moneytracker;
 
 public class Expenses {
-    private int expensesID;
+    private Integer expensesID;
     private String expenseName;
-    private double amount;
+    private Double amount;
     String dueDate;
     int account;
 
@@ -30,8 +30,12 @@ public class Expenses {
         this.expenseName = expenseName;
     }
 
-    public double getAmount() {
+    public Double getAmount() {
         return amount;
+    }
+
+    public String getAmountString() {
+        return amount.toString();
     }
 
     public void setAmount(double amount) {
@@ -52,5 +56,13 @@ public class Expenses {
 
     public void setAccount(int account) {
         this.account = account;
+    }
+
+    public Integer getExpensesID() {
+        return expensesID;
+    }
+
+    public String getExpensesIDString() {
+        return expensesID.toString();
     }
 }

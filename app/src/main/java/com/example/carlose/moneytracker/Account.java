@@ -1,7 +1,7 @@
 package com.example.carlose.moneytracker;
 
 public class Account {
-    private int accountID;
+    private Integer accountID;
     private String accountName;
     private String type;
     private double amount;
@@ -41,5 +41,13 @@ public class Account {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public Integer getAccountID() {
+        return accountID;
+    }
+
+    public String getAccountIDString() {
+        return accountID.toString();
     }
 }

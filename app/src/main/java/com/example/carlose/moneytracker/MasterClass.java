@@ -88,14 +88,27 @@ public class MasterClass {
 
     //Update Budget Info
     public void update(Budget b){
+        String budgetID =  b.getBudgetIDString();
+        ContentValues contentValues = getContentValues(b);
 
+        mDataBase.update(budgetTable.Name, contentValues, budgetTable.Cols.budgetID + "= ?", new String[]{budgetID});
     }
 
     //Update Account Info
-    public void update(Account a){}
+    public void update(Account a){
+        String accountID =  a.getAccountIDString();
+        ContentValues contentValues = getContentValues(a);
+
+        mDataBase.update(accountTable.Name, contentValues, accountTable.Cols.accountID + "= ?", new String[]{accountID});
+    }
 
     //Update Expenses Info
-    public  void update(Expenses e){}
+    public  void update(Expenses e){
+        String expenseID =  e.getExpensesIDString();
+        ContentValues contentValues = getContentValues(e);
+
+        mDataBase.update(expensesTable.Name, contentValues, expensesTable.Cols.expensesID + "= ?", new String[]{expenseID});
+    }
 
     //Insert Budget Info
     public void insertData(Budget b){
@@ -143,14 +156,52 @@ public class MasterClass {
         finally {
             cursorWrapper.close();
         }
-        return null;
+        return budgets;
     }
 
     //return a list with all the expenses stored in the database
-    public List<Expenses> getExpenses(){return null;}
+    public List<Expenses> getExpenses(){
+        List<Expenses> expenses = new ArrayList<>();
+
+        monayTrackerCursorWrapper cursorWrapper = budgetQuery(null,null);
+
+        try{
+            cursorWrapper.moveToFirst();
+            while (!cursorWrapper.isAfterLast()){
+                expenses.add(cursorWrapper.getExpense());
+                cursorWrapper.moveToNext();
+            }
+        }
+        catch (Exception e){
+            Toast.makeText(context.getApplicationContext(),"Some has gone wrong :(" + e.toString(), Toast.LENGTH_SHORT);
+        }
+        finally {
+            cursorWrapper.close();
+        }
+        return expenses;
+    }
 
     //return a list with all the accounts stored in the database
-    public List<Account> getAccount(){return null;}
+    public List<Account> getAccount(){
+        List<Account> accounts = new ArrayList<>();
+
+        monayTrackerCursorWrapper cursorWrapper = budgetQuery(null,null);
+
+        try{
+            cursorWrapper.moveToFirst();
+            while (!cursorWrapper.isAfterLast()){
+                accounts.add(cursorWrapper.getAccount());
+                cursorWrapper.moveToNext();
+            }
+        }
+        catch (Exception e){
+            Toast.makeText(context.getApplicationContext(),"Some has gone wrong :(" + e.toString(), Toast.LENGTH_SHORT);
+        }
+        finally {
+            cursorWrapper.close();
+        }
+        return accounts;
+    }
 
 
 
@@ -159,5 +210,15 @@ public class MasterClass {
         return  new monayTrackerCursorWrapper(cursor);
     }
 
-    
+    private monayTrackerCursorWrapper expensesQuery(String whereClause, String[] whereArgs){
+        Cursor cursor = mDataBase.query(expensesTable.Name,null, whereClause, whereArgs,null, null,null);
+        return  new monayTrackerCursorWrapper(cursor);
+    }
+
+    private monayTrackerCursorWrapper accountsQuery(String whereClause, String[] whereArgs){
+        Cursor cursor = mDataBase.query(accountTable.Name,null, whereClause, whereArgs,null, null,null);
+        return  new monayTrackerCursorWrapper(cursor);
+    }
+
+
 }

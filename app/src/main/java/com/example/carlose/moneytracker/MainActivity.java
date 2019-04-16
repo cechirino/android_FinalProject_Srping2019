@@ -1,5 +1,6 @@
 package com.example.carlose.moneytracker;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -11,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button menu;
     private CardView expensesCardView;
+    MasterClass masterClass = MasterClass.get(this);
     private static ArrayList<Budget> budgetsList = new ArrayList<>();
 
 
@@ -38,35 +41,42 @@ public class MainActivity extends AppCompatActivity {
 
         expensesCardView = (CardView) findViewById(R.id.expensesCardView);
 
-        expensesCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CallExpensesEditLayout();
-            }
-        });
+        CardView cardViewBudgets = findViewById(R.id.budgetCardViewEmpty);
 
-        addInfo();
-        if (budgetsList.size() > 0) {
-            // CardView cardView = findViewById(R.id.budgetCardViewEmpty);
-            // cardView.setVisibility(View.GONE);
-            addInfo();
+        if (masterClass.getBudgets().size() > 0) {
+
+            cardViewBudgets.setVisibility(View.GONE);
             initRecyclerViewBudgets();
         } else {
             RecyclerView viewRecyclerView = findViewById(R.id.budgetRecyclerView);
             viewRecyclerView.setVisibility(View.GONE);
+            cardViewBudgets.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
+
+
+        if (masterClass.getExpenses().size() > 0) {
+
+            expensesCardView.setVisibility(View.GONE);
+            initRecyclerViewBudgets();
+        } else {
+            RecyclerView viewRecyclerView = findViewById(R.id.budgetRecyclerView);
+            viewRecyclerView.setVisibility(View.GONE);
+            expensesCardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
 
     }
 
-    private void addInfo() {
-
-        for (int i = 0; i < 10; i++) {
-            Budget budget = new Budget("Hola" + i, 2 + 1, 3 + i);
-
-            budgetsList.add(budget);
-        }
-
-    }
 
     //Add the data to the Budgets List
     private void initRecyclerViewBudgets() {
@@ -74,14 +84,23 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = findViewById(R.id.budgetRecyclerView);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, budgetsList);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, masterClass.getBudgets());
         recyclerView.setAdapter(adapter);
+
     }
 
-    private void CallExpensesEditLayout() {
-        Intent intent = new Intent(getApplicationContext(), EditExpensesActivity.class);
-        startActivity(intent);
+    //Add the data to the Expenses List
+    private void initRecyclerViewExpense(){
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerView = findViewById(R.id.expensesRecyclerView);
+        recyclerView.setLayoutManager(layoutManager);
+        RecyclerViewAdapterExpenses adapter = new RecyclerViewAdapterExpenses(this, masterClass.getExpenses());
+        recyclerView.setAdapter(adapter);
+
     }
+
+
 
     private void CallActivity() {
         Intent intent = new Intent(this, MenuActivity.class);

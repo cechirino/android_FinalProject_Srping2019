@@ -3,7 +3,7 @@ package com.example.carlose.moneytracker;
 import java.io.Serializable;
 
 public class Budget implements Serializable {
-    private int budgetID;
+    private Integer budgetID;
     private  String budgetName;
     private  Double goal;
     private  Double amount;
@@ -61,5 +61,13 @@ public class Budget implements Serializable {
 
     public void setBudgetName(String budgetName) {
         this.budgetName = budgetName;
+    }
+
+    public Integer getBudgetID() {
+        return budgetID;
+    }
+
+    public String getBudgetIDString() {
+        return budgetID.toString();
     }
 }
