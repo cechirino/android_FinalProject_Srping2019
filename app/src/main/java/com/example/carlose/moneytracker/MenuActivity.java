@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
     private Button homeButton;
@@ -70,17 +71,24 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void CallBudgetActivity(){
-        Intent intent = new Intent(this, BudgetActivity.class);
-        startActivity(intent);
+        Toast.makeText(MenuActivity.this,"Comming Soon", Toast.LENGTH_SHORT).show();
+
+       /* Intent intent = new Intent(this, BudgetActivity.class);
+        startActivity(intent);*/
     }
 
     private void CallReceiptActivity(){
-        Intent intent = new Intent(this, ReceiptActivity.class);
-        startActivity(intent);
+        Toast.makeText(MenuActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
+
+        /*Intent intent = new Intent(this, ReceiptActivity.class);
+        startActivity(intent);*/
     }
 
     private void CallExpensestActivity(){
-        Intent intent = new Intent(this, ExpensesActivity.class);
-        startActivity(intent);
+        Toast.makeText(MenuActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
+
+
+        /*Intent intent = new Intent(this, ExpensesActivity.class);
+        startActivity(intent);*/
     }
 }
