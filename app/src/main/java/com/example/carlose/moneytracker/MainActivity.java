@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button menu;
     private CardView expensesCardView;
-    MasterClass masterClass = MasterClass.get(this);
+    MasterClass masterClass;
     private static ArrayList<Budget> budgetsList = new ArrayList<>();
 
 
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+       // masterClass =MasterClass.get(MainActivity.this);
         menu = (Button) findViewById(R.id.menuButton);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         CardView cardViewBudgets = findViewById(R.id.budgetCardViewEmpty);
 
-        if (masterClass.getBudgets().size() > 0) {
+        /*if (masterClass.getBudgets().size() > 0) {
 
             cardViewBudgets.setVisibility(View.GONE);
             initRecyclerViewBudgets();
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         if (masterClass.getExpenses().size() > 0) {
 
             expensesCardView.setVisibility(View.GONE);
-            initRecyclerViewBudgets();
+            initRecyclerViewExpense();
         } else {
             RecyclerView viewRecyclerView = findViewById(R.id.budgetRecyclerView);
             viewRecyclerView.setVisibility(View.GONE);
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
                 }
             });
-        }
+        }*/
 
 
     }

@@ -4,7 +4,7 @@ public class Account {
     private Integer accountID;
     private String accountName;
     private String type;
-    private double amount;
+    private Double amount;
 
     public Account(int accountID, String accountName, String type, double amount) {
         this.accountID = accountID;
@@ -35,11 +35,15 @@ public class Account {
         this.type = type;
     }
 
-    public double getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public String getAmountString() {
+        return amount.toString();
+    }
+
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 

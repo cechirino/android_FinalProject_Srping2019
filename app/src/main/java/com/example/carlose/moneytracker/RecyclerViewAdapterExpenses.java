@@ -31,7 +31,8 @@ public class RecyclerViewAdapterExpenses extends RecyclerView.Adapter<RecyclerVi
     public void onBindViewHolder(@NonNull ViewHolderExpenses viewHolder, int i) {
         Expenses expenses = expensesList.get(i);
         viewHolder.dueDateLabelFragment.setText(expenses.getDueDate());
-        viewHolder.monayToSpendFragment.setText(expenses.getAmount().toString());
+        viewHolder.moneyToSpendFragment.setText(expenses.getAmount().toString());
+        viewHolder.expensesCardTitle.setText(expenses.getExpenseName());
     }
 
     @Override
@@ -41,14 +42,15 @@ public class RecyclerViewAdapterExpenses extends RecyclerView.Adapter<RecyclerVi
 
     public class ViewHolderExpenses extends RecyclerView.ViewHolder{
         TextView dueDateLabelFragment;
-        TextView monayToSpendFragment;
-
+        TextView moneyToSpendFragment;
+        TextView expensesCardTitle;
 
         public ViewHolderExpenses(@NonNull View itemView) {
             super(itemView);
 
             this.dueDateLabelFragment = itemView.findViewById(R.id.dueDateLabelFragment);
-            this.monayToSpendFragment = itemView.findViewById(R.id.monayToSpendFragment);
+            this.moneyToSpendFragment = itemView.findViewById(R.id.moneyToSpendFragment);
+            this.expensesCardTitle = itemView.findViewById(R.id.expensesCardTitle);
         }
     }
 }
