@@ -1,12 +1,19 @@
 package com.example.carlose.moneytracker;
 
 public class Account {
-    private int amountID;
+    private int accountID;
     private String accountName;
     private String type;
     private double amount;
 
-    public Account(int amountID, String accountName, String type, double amount) {
+    public Account(int accountID, String accountName, String type, double amount) {
+        this.accountID = accountID;
+        this.accountName = accountName;
+        this.type = type;
+        this.amount = amount;
+    }
+
+    public Account(String accountName, String type, double amount) {
         this.accountName = accountName;
         this.type = type;
         this.amount = amount;

@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import database.moneytrackerDbSchema.accountTable;
 import database.moneytrackerDbSchema.budgetTable;
-import database.moneytrackerDbSchema.expemsesTabel;
+import database.moneytrackerDbSchema.expensesTable;
 
 
 public class moneyTrackerBaseHelper extends SQLiteOpenHelper {
@@ -26,8 +26,8 @@ public class moneyTrackerBaseHelper extends SQLiteOpenHelper {
         db.execSQL(" CREATE TABLE " + accountTable.Name + "(" + accountTable.Cols.accountID + " integer primary key autoincrement, " + accountTable.Cols.accountName + ", "
                 + accountTable.Cols.amountAccount + ", " + accountTable.Cols.type);
 
-        db.execSQL(" CREATE TABLE " + expemsesTabel.Name + "(" + expemsesTabel.Cols.expensesID + " integer primary key autoincrement, " + expemsesTabel.Cols.expensesName + ", "
-                + expemsesTabel.Cols.amountExpense + ", " + expemsesTabel.Cols.dueDate);
+        db.execSQL(" CREATE TABLE " + expensesTable.Name + "(" + expensesTable.Cols.expensesID + " integer primary key autoincrement, " + expensesTable.Cols.expensesName + ", "
+                + expensesTable.Cols.amountExpense + ", " + expensesTable.Cols.dueDate);
     }
 
     @Override

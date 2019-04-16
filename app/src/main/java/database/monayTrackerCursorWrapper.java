@@ -9,7 +9,7 @@ import com.example.carlose.moneytracker.Expenses;
 
 import database.moneytrackerDbSchema.accountTable;
 import database.moneytrackerDbSchema.budgetTable;
-import database.moneytrackerDbSchema.expemsesTabel;
+import database.moneytrackerDbSchema.expensesTable;
 
 public class monayTrackerCursorWrapper extends CursorWrapper {
     /**
@@ -32,10 +32,10 @@ public class monayTrackerCursorWrapper extends CursorWrapper {
     }
 
     public Expenses getExpense(){
-        int expensesID = getInt(getColumnIndex(expemsesTabel.Cols.expensesID));
-        String expenseName = getString(getColumnIndex(expemsesTabel.Cols.expensesName));
-        Double amount = getDouble(getColumnIndex(expemsesTabel.Cols.amountExpense));
-        String dueDate = getString(getColumnIndex(expemsesTabel.Cols.dueDate));
+        int expensesID = getInt(getColumnIndex(expensesTable.Cols.expensesID));
+        String expenseName = getString(getColumnIndex(expensesTable.Cols.expensesName));
+        Double amount = getDouble(getColumnIndex(expensesTable.Cols.amountExpense));
+        String dueDate = getString(getColumnIndex(expensesTable.Cols.dueDate));
 
         Expenses expenses = new Expenses(expensesID, expenseName, amount,dueDate);
         return expenses;

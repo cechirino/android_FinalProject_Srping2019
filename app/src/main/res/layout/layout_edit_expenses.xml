@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/moneytoSpend"
-            android:text=" -$ 300"
+            android:text=" -$ "
             android:textSize="50dp"
             app:layout_constraintBottom_toTopOf="@id/nameExpenseLabel"
             app:layout_constraintStart_toStartOf="parent"

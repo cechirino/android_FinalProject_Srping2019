@@ -8,6 +8,14 @@ public class Expenses {
     int account;
 
     public Expenses(int expensesID, String expenseName, double amount, String dueDate) {
+        this.expensesID = expensesID;
+        this.expenseName = expenseName;
+        this.amount = amount;
+        this.dueDate = dueDate;
+        this.account = account;
+    }
+
+    public Expenses(String expenseName, double amount, String dueDate) {
         this.expenseName = expenseName;
         this.amount = amount;
         this.dueDate = dueDate;

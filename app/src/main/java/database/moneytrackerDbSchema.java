@@ -3,7 +3,7 @@ package database;
 public class moneytrackerDbSchema {
 
     public static final class budgetTable{
-        public static final String Name = "budgets";
+        public static final String Name = "Budgets";
 
         public static final class Cols{
             public static final  String budgetID = "budgetID";
@@ -14,7 +14,7 @@ public class moneytrackerDbSchema {
     }
 
 
-    public static final class expemsesTabel{
+    public static final class expensesTable{
         public static final String Name = "Expenses";
 
         public static final  class Cols{
