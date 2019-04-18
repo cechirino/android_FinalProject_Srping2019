@@ -1,7 +1,9 @@
 package com.example.carlose.moneytracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,11 +31,20 @@ public class RecyclerViewAdapterAccounts extends RecyclerView.Adapter<RecyclerVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderAccount viewHolder, int i) {
-        Account account = this.accountList.get(i);
+    public void onBindViewHolder(@NonNull final ViewHolderAccount viewHolder, int i) {
+        final Account account = this.accountList.get(i);
         viewHolder.accountCardTitle.setText(account.getAccountName());
         viewHolder.balanceLabelFragment.setText(account.getAmountString());
         viewHolder.typeLabelFragment.setText(account.getType());
+
+        viewHolder.accountCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(viewHolder.accountCardView.getContext(), EditAccountsActivity.class);
+                intent.putExtra("Account", account);
+                viewHolder.accountCardView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -46,6 +57,7 @@ public class RecyclerViewAdapterAccounts extends RecyclerView.Adapter<RecyclerVi
         TextView accountCardTitle;
         TextView balanceLabelFragment;
         TextView typeLabelFragment;
+        CardView accountCardView;
 
         public ViewHolderAccount(@NonNull View itemView) {
             super(itemView);
@@ -53,6 +65,7 @@ public class RecyclerViewAdapterAccounts extends RecyclerView.Adapter<RecyclerVi
             this.accountCardTitle = itemView.findViewById(R.id.accountCardTitle);
             this.balanceLabelFragment = itemView.findViewById(R.id.balanceLabelFragment);
             this.typeLabelFragment = itemView.findViewById(R.id.typeLabelFragment);
+            this.accountCardView = itemView.findViewById(R.id.accountCardView);
         }
     }
 }

@@ -1,12 +1,14 @@
 package com.example.carlose.moneytracker;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable {
     private Integer accountID;
     private String accountName;
     private String type;
     private Double amount;
 
-    public Account(int accountID, String accountName, String type, double amount) {
+    public Account(int accountID, String accountName, String type, double amount)  {
         this.accountID = accountID;
         this.accountName = accountName;
         this.type = type;

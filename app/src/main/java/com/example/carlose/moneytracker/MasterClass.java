@@ -173,7 +173,7 @@ public class MasterClass {
             }
         }
         catch (Exception e){
-            Toast.makeText(context.getApplicationContext(),"Some has gone wrong :(" + e.toString(), Toast.LENGTH_SHORT);
+            Toast.makeText(context.getApplicationContext(),"Some has gone wrong :(" + e.toString(), Toast.LENGTH_SHORT).show();
         }
         finally {
             cursorWrapper.close();

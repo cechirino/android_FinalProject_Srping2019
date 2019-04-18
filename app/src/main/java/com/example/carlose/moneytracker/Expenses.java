@@ -1,6 +1,8 @@
 package com.example.carlose.moneytracker;
 
-public class Expenses {
+import java.io.Serializable;
+
+public class Expenses implements Serializable {
     private Integer expensesID;
     private String expenseName;
     private Double amount;
