@@ -72,7 +72,7 @@ public class EditExpensesActivity extends AppCompatActivity {
 
             this.masterClass.update(expenses);
 
-            Intent intent = new Intent(this, EditExpensesActivity.class);
+            Intent intent = new Intent(this, ExpensesActivity.class);
             startActivity(intent);
 
         }
