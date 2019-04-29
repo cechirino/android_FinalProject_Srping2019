@@ -71,10 +71,10 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void CallBudgetActivity(){
-        Toast.makeText(MenuActivity.this,"Comming Soon", Toast.LENGTH_SHORT).show();
 
-       /* Intent intent = new Intent(this, BudgetActivity.class);
-        startActivity(intent);*/
+
+        Intent intent = new Intent(this, BudgetActivity.class);
+        startActivity(intent);
     }
 
     private void CallReceiptActivity(){

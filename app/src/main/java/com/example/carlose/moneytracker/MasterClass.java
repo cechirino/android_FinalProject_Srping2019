@@ -132,7 +132,12 @@ public class MasterClass {
     public void delete(Budget b){}
 
     //Delete Account
-    public void delete(Account a){}
+    public void delete(Account a){
+        String accountID = a.getAccountIDString();
+        ContentValues values = getContentValues(a);
+
+        mDataBase.delete(accountTable.Name, accountTable.Cols.accountID + "= ?", new String[]{accountID} );
+    }
 
     //Delete Expenses
     public  void delete(Expenses e){}

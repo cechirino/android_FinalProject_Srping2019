@@ -59,6 +59,9 @@ public class AccountActivity extends AppCompatActivity {
 
                     masterClass.addData(account);
                     initRecyclerViewAccounts();
+                    accountNameTxtBox.setText("");
+                    amountAccountTxtBox.setText("");
+                    refreshActivity();
                 }
                 else{
                     Toast.makeText(AccountActivity.this, "All Fields are required", Toast.LENGTH_SHORT).show();
@@ -76,5 +79,16 @@ public class AccountActivity extends AppCompatActivity {
         RecyclerViewAdapterAccounts adapter = new RecyclerViewAdapterAccounts(this, masterClass.getAccount());
         recyclerView.setAdapter(adapter);
 
+    }
+
+    private void refreshActivity(){
+        Intent intent = new Intent(this, AccountActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public  void onBackPressed(){
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
     }
 }
