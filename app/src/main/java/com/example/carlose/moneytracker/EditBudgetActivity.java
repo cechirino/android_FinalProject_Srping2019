@@ -63,7 +63,7 @@ public class EditBudgetActivity extends AppCompatActivity {
     private void removeBudget(){
         this.masterClass.delete(budget);
 
-        Intent intent = new Intent(this, EditBudgetActivity.class);
+        Intent intent = new Intent(this, BudgetActivity.class);
         startActivity(intent);
     }
 

@@ -13,10 +13,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/moneytoSpend"
+            android:id="@+id/moneytoSpendEdit"
             android:text=" -$ "
             android:textSize="50dp"
-            app:layout_constraintBottom_toTopOf="@id/nameExpenseLabel"
+            app:layout_constraintBottom_toTopOf="@id/nameExpenseLabelEdit"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,7 @@
             android:textColor="@color/colorAccent"/>
 
         <TextView
-            android:id="@+id/nameExpenseLabel"
+            android:id="@+id/nameExpenseLabelEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -32,7 +32,7 @@
             android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/moneytoSpend" />
+            app:layout_constraintTop_toTopOf="@+id/moneytoSpendEdit" />
 
         <LinearLayout
             android:id="@+id/infoExpenses"
@@ -42,7 +42,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameExpenseLabel">
+            app:layout_constraintTop_toBottomOf="@+id/nameExpenseLabelEdit">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -52,6 +52,28 @@
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Name      :"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:id="@+id/nameExpensesTxtBoxEdit"
+                    android:layout_marginStart="62dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="Name"
+                    android:inputType="date"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,6 +91,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
+                    android:id="@+id/dueDateExpensesTxtBoxEdit"
                     android:layout_marginStart="62dp"
                     android:layout_marginTop="15dp"
                     android:hint="2/18/2019"
@@ -91,13 +114,14 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
+                    android:id="@+id/expensesAmounttxtBoxEdit"
                     android:layout_marginStart="70dp"
                     android:layout_marginTop="15dp"
                     android:hint="Enter a Amount"/>
 
             </LinearLayout>
 
-            <LinearLayout
+           <!-- <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -118,7 +142,7 @@
                 </Spinner>
 
 
-            </LinearLayout>
+            </LinearLayout> -->
 
         </LinearLayout>
 
@@ -135,7 +159,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/removeButtonReceipt"
+                android:id="@+id/removeButtonExpenses"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginStart="70dp"
@@ -145,7 +169,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/saveButtonReceipt"
+                android:id="@+id/saveButtonExpenses"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginStart="50dp"

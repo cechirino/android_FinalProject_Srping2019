@@ -85,10 +85,13 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void CallExpensestActivity(){
-        Toast.makeText(MenuActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
 
+        Intent intent = new Intent(this, ExpensesActivity.class);
+        startActivity(intent);
+    }
 
-        /*Intent intent = new Intent(this, ExpensesActivity.class);
-        startActivity(intent);*/
+    public  void onBackPressed(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

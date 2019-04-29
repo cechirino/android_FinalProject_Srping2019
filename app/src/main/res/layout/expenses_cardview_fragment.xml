@@ -8,7 +8,7 @@
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/expensesCardView"
+        android:id="@+id/expensesCardViewFragment"
         android:layout_centerInParent="true">
 
         <RelativeLayout

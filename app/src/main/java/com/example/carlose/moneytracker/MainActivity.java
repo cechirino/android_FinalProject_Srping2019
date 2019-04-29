@@ -12,16 +12,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private Button menu;
     private CardView expensesCardView;
+    private TextView totalAmount;
+    private TextView expensesTotal;
+    private Double Total;
     MasterClass masterClass;
     private static ArrayList<Budget> budgetsList = new ArrayList<>();
 
@@ -41,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         expensesCardView = (CardView) findViewById(R.id.expensesCardViewEmpty);
+        totalAmount = findViewById(R.id.totalAmountMain);
+        expensesTotal = findViewById(R.id.expensesTotalMain);
+
+        showTotalAmount();
+
+        showTotalExpenses();
 
         CardView cardViewBudgets = findViewById(R.id.budgetCardViewEmpty);
 
@@ -106,5 +117,30 @@ public class MainActivity extends AppCompatActivity {
     private void CallActivity() {
         Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
+    }
+
+    private void showTotalAmount(){
+        this.Total = 0.0;
+        List<Budget> budgetList = masterClass.getBudgets();
+        for (Account account:masterClass.getAccount()) {
+            Total += account.getAmount();
+        }
+
+        this.totalAmount.setText("$ " + Total.toString());
+    }
+
+    private void showTotalExpenses(){
+        this.Total = 0.0;
+
+        for (Expenses expense:masterClass.getExpenses()) {
+            Total += expense.getAmount();
+        }
+
+        this.expensesTotal.setText("-$ " + Total.toString());
+    }
+
+    @Override
+    public  void onBackPressed(){
+        //Do Nothing
     }
 }
