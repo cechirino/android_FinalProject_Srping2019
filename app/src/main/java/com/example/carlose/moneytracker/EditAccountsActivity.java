@@ -7,17 +7,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EditAccountsActivity extends AppCompatActivity {
     private MasterClass masterClass;
     private Account account;
-    TextView txtBoxAccountEditName;
-    TextView txtBoxAccountEditAmount;
-    Spinner spinnerAccoutnEdit;
-    TextView accountMoney;
+    private TextView txtBoxAccountEditName;
+    private TextView txtBoxAccountEditAmount;
+    private Spinner spinnerAccoutnEdit;
+    private TextView accountMoney;
 
-    Button remove;
-    Button save;
+    private Button remove;
+    private Button save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,12 +64,24 @@ public class EditAccountsActivity extends AppCompatActivity {
     }
 
     private void saveAccount(){
-        this.account.setAccountName(this.txtBoxAccountEditName.getText().toString());
-        this.account.setAmount(Double.parseDouble(this.txtBoxAccountEditAmount.getText().toString()));
-        this.account.setType(this.spinnerAccoutnEdit.getSelectedItem().toString());
+        if(!txtBoxAccountEditName.getText().toString().equals("") && !txtBoxAccountEditAmount.getText().toString().equals("")){
+            this.account.setAccountName(this.txtBoxAccountEditName.getText().toString());
+            this.account.setAmount(Double.parseDouble(this.txtBoxAccountEditAmount.getText().toString()));
+            this.account.setType(this.spinnerAccoutnEdit.getSelectedItem().toString());
 
-        masterClass.update(account);
+            masterClass.update(account);
 
+            Intent intent = new Intent(this, AccountActivity.class);
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(EditAccountsActivity.this, "All Fields are required", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @Override
+    public  void onBackPressed(){
         Intent intent = new Intent(this, AccountActivity.class);
         startActivity(intent);
     }

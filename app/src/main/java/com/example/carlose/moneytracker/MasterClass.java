@@ -129,18 +129,26 @@ public class MasterClass {
     }
 
     //Delete Budget
-    public void delete(Budget b){}
+    public void delete(Budget b){
+        String budgetID = b.getBudgetIDString();
+
+        mDataBase.delete(budgetTable.Name, budgetTable.Cols.budgetID + "= ?", new String[]{budgetID} );
+    }
 
     //Delete Account
     public void delete(Account a){
         String accountID = a.getAccountIDString();
-        ContentValues values = getContentValues(a);
 
         mDataBase.delete(accountTable.Name, accountTable.Cols.accountID + "= ?", new String[]{accountID} );
     }
 
     //Delete Expenses
-    public  void delete(Expenses e){}
+    public  void delete(Expenses e){
+
+        String expenseID = e.getExpensesIDString();
+
+        mDataBase.delete(expensesTable.Name, expensesTable.Cols.expensesID + "= ?", new String[]{expenseID} );
+    }
 
     //return a list with all the budget stored in the database
     public List<Budget> getBudgets(){

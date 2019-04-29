@@ -21,6 +21,7 @@ public class AccountActivity extends AppCompatActivity {
     private EditText accountNameTxtBox;
     private EditText amountAccountTxtBox;
     private Spinner spinnerAccount;
+    private RecyclerView viewRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class AccountActivity extends AppCompatActivity {
         accountNameTxtBox = findViewById(R.id.accountNameTxtBox);
         amountAccountTxtBox = findViewById(R.id.amountAccountTxtBox);
         spinnerAccount = findViewById(R.id.spinnerAccount);
+        viewRecyclerView = findViewById(R.id.accountRecyclerView);
 
        if (masterClass.getAccount().size() > 0) {
 
@@ -58,10 +60,12 @@ public class AccountActivity extends AppCompatActivity {
                             , Double.parseDouble(amountAccountTxtBox.getText().toString()));
 
                     masterClass.addData(account);
+                    accountListCardView.setVisibility(View.GONE);
+                    viewRecyclerView.setVisibility(View.VISIBLE);
                     initRecyclerViewAccounts();
                     accountNameTxtBox.setText("");
                     amountAccountTxtBox.setText("");
-                    refreshActivity();
+
                 }
                 else{
                     Toast.makeText(AccountActivity.this, "All Fields are required", Toast.LENGTH_SHORT).show();
@@ -71,7 +75,7 @@ public class AccountActivity extends AppCompatActivity {
 
      }
 
-    public void initRecyclerViewAccounts(){
+    private void initRecyclerViewAccounts(){
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = findViewById(R.id.accountRecyclerView);
@@ -81,10 +85,7 @@ public class AccountActivity extends AppCompatActivity {
 
     }
 
-    private void refreshActivity(){
-        Intent intent = new Intent(this, AccountActivity.class);
-        startActivity(intent);
-    }
+
 
     @Override
     public  void onBackPressed(){

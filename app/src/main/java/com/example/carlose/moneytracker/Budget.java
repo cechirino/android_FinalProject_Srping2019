@@ -14,14 +14,13 @@ public class Budget implements Serializable {
         this.budgetName = budgetname;
         this.goal = goal;
         this.amount = amount;
-        this.account = account;
     }
 
     public Budget(int budgetID, String budgetname, double goal, double amount) {
+        this.budgetID = budgetID;
         this.budgetName = budgetname;
         this.goal = goal;
         this.amount = amount;
-        this.account = account;
     }
 
     public Double getGoal() {
@@ -31,6 +30,7 @@ public class Budget implements Serializable {
     public String getGoalString() {
         return goal.toString();
     }
+
     public void setGoal(double goal) {
         this.goal = goal;
     }

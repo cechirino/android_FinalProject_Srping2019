@@ -42,11 +42,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             viewHolder.moneySavedLabelBudgetFragment.setText(budget.getAmountString());
             viewHolder.goalLabelBudgetFragment.setText(budget.getGoalString());
 
-            viewHolder.budgetCardView.setOnClickListener(new View.OnClickListener() {
+            viewHolder.budgetCardViewFragment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(viewHolder.budgetCardView.getContext(), EditBudgetActivity.class);
-                    intent.putExtra("Buget", budget);
+
+                    Intent intent = new Intent(viewHolder.budgetCardViewFragment.getContext(), EditBudgetActivity.class);
+                    intent.putExtra("Budget", budget);
                     context.startActivity(intent);
                 }
             });
@@ -63,7 +64,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView budgetCardTitle;
         TextView moneySavedLabelBudgetFragment;
         TextView goalLabelBudgetFragment;
-        CardView budgetCardView;
+        CardView budgetCardViewFragment;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,7 +72,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.budgetCardTitle = itemView.findViewById(R.id.budgetCardTitle);
             this.moneySavedLabelBudgetFragment = itemView.findViewById(R.id.moneySavedLabelBudgetFragment);
             this.goalLabelBudgetFragment = itemView.findViewById(R.id.goalLabelBudgetFragment);
-            this.budgetCardView = itemView.findViewById(R.id.budgetCardView);
+            this.budgetCardViewFragment = itemView.findViewById(R.id.budgetCardViewFragment);
         }
     }
 }
