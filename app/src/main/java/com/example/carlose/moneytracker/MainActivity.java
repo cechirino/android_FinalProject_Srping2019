@@ -139,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
         this.expensesTotal.setText("-$ " + Total.toString());
     }
 
-    @Override
     public  void onBackPressed(){
         //Do Nothing
     }

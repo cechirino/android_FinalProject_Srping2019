@@ -78,7 +78,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void CallReceiptActivity(){
-        Toast.makeText(MenuActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MenuActivity.this, "Coming Soon", Toast.LENGTH_SHORT).show();
 
         /*Intent intent = new Intent(this, ReceiptActivity.class);
         startActivity(intent);*/
@@ -90,6 +90,7 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
     public  void onBackPressed(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
